@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1",
+  "provider": "us/bank-of-america",
+  "adapterRevision": "c685381f648c10037c941ed9b4dbfc4a3747e34b",
+  "harnessRevision": "c685381f648c10037c941ed9b4dbfc4a3747e34b",
+  "testedAt": "2026-10-02T12:00:00Z",
+  "reporter": "Primuez",
+  "surface": "web-activity-detail",
+  "capability": "outgoing-usd-zelle-completed",
+  "outcome": "pass",
+  "evidenceClass": "contributor-live",
+  "fixtureRefs": ["fixtures/sent.synthetic.json"],
+  "limitations": [
+    "One contributor account; no independent reviewer reproduction.",
+    "Outgoing USD Zelle transfers tested; ACH, wires, checks, and cards are not covered.",
+    "Source authenticity, legal ownership, recipient credit, and irreversible settlement are not proven.",
+    "Raw banking response remained in local authorized session memory and is not published."
+  ],
+  "summary": "Account-owner-authorized browser inspection evaluated the activity detail response and verified the transformer on outgoing USD Zelle payments. Amount in cents, payer account reference, recipient email/phone token, completed status, and UTC timestamp matched exactly. No payments initiated."
+}
