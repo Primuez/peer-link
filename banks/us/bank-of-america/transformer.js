@@ -35,7 +35,7 @@ export function interpretBankOfAmerica(input, transactionId) {
   if (paymentMethod !== "Zelle" && activityType !== "ZELLE_DEBIT")
     return { outcome: "unsupported", reason: "Only outgoing USD Zelle payments are supported" };
 
-  if (row.status !== "COMPLETED" && row.status !== "DELIVERED")
+  if (row.status !== "COMPLETED")
     return fail("Transaction is not bank-reported completed");
 
   if (row.hold === true || (Array.isArray(row.activeHolds) && row.activeHolds.length > 0))

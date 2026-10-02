@@ -7,6 +7,7 @@
   "version": "0.1.0",
   "surface": "web-activity-detail",
   "capability": "Interpret outgoing USD Zelle payments as sender-bank-reported completed transfers",
+  "entrypoint": "interpretBankOfAmerica",
   "maintainers": ["Primuez"],
   "currencies": ["USD"],
   "unsupported": [
@@ -19,5 +20,6 @@
     "recipient-credit confirmation",
     "cryptographic source authentication"
   ],
-  "fixtureProvenance": "synthetic"
+  "fixtureProvenance": "synthetic",
+  "logo": "/logos/bank-of-america.png"
 }
