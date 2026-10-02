@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1",
+  "id": "pk/easypaisa",
+  "name": "Easypaisa",
+  "country": "PK",
+  "status": "experimental",
+  "version": "0.1.0",
+  "surface": "mobile-transaction-history",
+  "capability": "Interpret outgoing Easypaisa-to-Easypaisa mobile transfers as sender-bank-reported completed payments",
+  "entrypoint": "interpretEasypaisa",
+  "maintainers": ["Primuez"],
+  "currencies": ["PKR"],
+  "unsupported": [
+    "IBFT / Raast",
+    "incoming transfers",
+    "bill payments",
+    "mobile top-ups",
+    "cash deposits",
+    "debit cards",
+    "recipient-credit confirmation",
+    "cryptographic source authentication"
+  ],
+  "fixtureProvenance": "synthetic",
+  "logo": "/logos/easypaisa.png"
+}

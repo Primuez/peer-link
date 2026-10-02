@@ -1,0 +1,30 @@
+{
+  "provenance": "synthetic",
+  "description": "The same invented transfer while Easypaisa still reports it as pending.",
+  "input": {
+    "account": {
+      "accountNumber": "03000000001"
+    },
+    "transactions": [
+      {
+        "id": "10000000001",
+        "type": "easypaisa_transfer",
+        "direction": "debit",
+        "status": "PENDING",
+        "amount": "1500.00",
+        "currency": "PKR",
+        "timestamp": "2026-03-15T09:30:00Z",
+        "receiver": {
+          "accountNumber": "03000000002",
+          "title": "Synthetic Payee"
+        },
+        "memo": "SYNTHETIC EXAMPLE ONLY"
+      }
+    ]
+  },
+  "transactionId": "10000000001",
+  "expected": {
+    "outcome": "insufficient_evidence",
+    "reason": "Transaction is not bank-reported completed"
+  }
+}
