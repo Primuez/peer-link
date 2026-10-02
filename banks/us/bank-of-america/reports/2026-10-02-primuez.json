@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1",
   "bankId": "us/bank-of-america",
-  "adapterRevision": "821193a7b9230d347a2f71c1168665b79887919c",
-  "harnessRevision": "821193a7b9230d347a2f71c1168665b79887919c",
+  "adapterRevision": "85ce0835a04956e96a58ec615ea83da1e9c7ade7",
+  "harnessRevision": "85ce0835a04956e96a58ec615ea83da1e9c7ade7",
   "surface": "web-activity-detail",
   "capability": "outgoing-zelle-usd-transfer",
   "evidenceClass": "contributor-live",
