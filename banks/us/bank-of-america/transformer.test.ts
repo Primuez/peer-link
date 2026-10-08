@@ -93,6 +93,15 @@ describe("Bank of America Zelle payment evidence", () => {
     expect(run(change(patch)).outcome).toBe("unsupported"),
   );
 
+  it("rejects conflicting rail indicators in both directions", () => {
+    expect(run(change({ type: "ZELLE_DEBIT", details: { paymentMethod: "ACH" } })).outcome).toBe(
+      "unsupported",
+    );
+    expect(run(change({ type: "ACH_DEBIT", details: { paymentMethod: "Zelle" } })).outcome).toBe(
+      "unsupported",
+    );
+  });
+
   it.each([
     { hold: true },
     { activeHolds: [{ reason: "risk_review" }] },

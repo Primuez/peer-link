@@ -25,14 +25,21 @@ export function interpretBankOfAmerica(input, transactionId) {
   if (!row) return fail("Invalid transaction");
 
   const details = object(row.details);
-  const paymentMethod =
-    typeof details?.paymentMethod === "string" ? details.paymentMethod : row.paymentMethod;
+  const rawPaymentMethod =
+    typeof details?.paymentMethod === "string"
+      ? details.paymentMethod
+      : typeof row.paymentMethod === "string"
+        ? row.paymentMethod
+        : undefined;
   const activityType = typeof row.type === "string" ? row.type : "";
 
   if (activityType === "ZELLE_CREDIT")
     return { outcome: "unsupported", reason: "Only outgoing USD Zelle payments are supported" };
 
-  if (paymentMethod !== "Zelle" && activityType !== "ZELLE_DEBIT")
+  if (
+    activityType !== "ZELLE_DEBIT" ||
+    (rawPaymentMethod !== undefined && rawPaymentMethod !== "Zelle")
+  )
     return { outcome: "unsupported", reason: "Only outgoing USD Zelle payments are supported" };
 
   if (row.status !== "COMPLETED") return fail("Transaction is not bank-reported completed");
